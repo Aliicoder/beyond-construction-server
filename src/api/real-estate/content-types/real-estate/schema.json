@@ -4,7 +4,7 @@
   "info": {
     "singularName": "real-estate",
     "pluralName": "real-estates",
-    "displayName": "real-estate"
+    "displayName": "Real-estate"
   },
   "options": {
     "draftAndPublish": true
@@ -45,6 +45,12 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "bookings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::booking.booking",
+      "mappedBy": "real_estate"
     }
   }
 }

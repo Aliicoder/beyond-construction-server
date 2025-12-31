@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "singularName": "booking",
+    "pluralName": "bookings",
+    "displayName": "Booking"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "maxLength": 20,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "biginteger",
+      "required": true
+    },
+    "message": {
+      "type": "text",
+      "maxLength": 50,
+      "required": true
+    },
+    "real_estate": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::real-estate.real-estate",
+      "inversedBy": "bookings"
+    }
+  }
+}
