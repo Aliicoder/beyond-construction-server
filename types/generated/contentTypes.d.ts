@@ -516,6 +516,12 @@ export interface ApiRealEstateRealEstate extends Struct.CollectionTypeSchema {
   };
   attributes: {
     bookings: Schema.Attribute.Relation<'oneToMany', 'api::booking.booking'>;
+    city: Schema.Attribute.Enumeration<['riyadh', 'jeddah']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'riyadh'>;
+    condition: Schema.Attribute.Enumeration<['rent', 'sale']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'sale'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -530,13 +536,15 @@ export interface ApiRealEstateRealEstate extends Struct.CollectionTypeSchema {
     location: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 30;
+        maxLength: 100;
       }>;
     price: Schema.Attribute.Integer &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
-    type: Schema.Attribute.Enumeration<['apartment', 'building', 'villa']> &
+    type: Schema.Attribute.Enumeration<
+      ['apartment', 'building', 'villa', 'land', 'warehouse']
+    > &
       Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

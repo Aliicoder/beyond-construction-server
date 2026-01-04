@@ -13,7 +13,7 @@
   "attributes": {
     "location": {
       "type": "text",
-      "maxLength": 30,
+      "maxLength": 100,
       "required": true
     },
     "price": {
@@ -35,7 +35,9 @@
       "enum": [
         "apartment",
         "building",
-        "villa"
+        "villa",
+        "land",
+        "warehouse"
       ]
     },
     "images": {
@@ -51,6 +53,24 @@
       "relation": "oneToMany",
       "target": "api::booking.booking",
       "mappedBy": "real_estate"
+    },
+    "condition": {
+      "type": "enumeration",
+      "required": true,
+      "default": "sale",
+      "enum": [
+        "rent",
+        "sale"
+      ]
+    },
+    "city": {
+      "type": "enumeration",
+      "required": true,
+      "default": "riyadh",
+      "enum": [
+        "riyadh",
+        "jeddah"
+      ]
     }
   }
 }
