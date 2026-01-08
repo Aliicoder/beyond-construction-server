@@ -16,10 +16,6 @@
       "maxLength": 20,
       "required": true
     },
-    "email": {
-      "type": "email",
-      "required": true
-    },
     "phone": {
       "type": "biginteger",
       "required": true

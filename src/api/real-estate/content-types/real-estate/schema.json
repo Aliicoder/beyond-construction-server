@@ -17,16 +17,7 @@
       "required": true
     },
     "price": {
-      "type": "integer",
-      "required": true,
-      "default": 0
-    },
-    "width": {
-      "type": "integer",
-      "required": true
-    },
-    "height": {
-      "type": "integer",
+      "type": "biginteger",
       "required": true
     },
     "type": {
@@ -34,10 +25,13 @@
       "required": true,
       "enum": [
         "apartment",
-        "building",
+        "floor",
+        "shop",
+        "showroom",
+        "office",
         "villa",
-        "land",
-        "warehouse"
+        "warehouse",
+        "workshop"
       ]
     },
     "images": {
@@ -71,6 +65,21 @@
         "riyadh",
         "jeddah"
       ]
+    },
+    "youtube_video": {
+      "type": "text"
+    },
+    "license_number": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "size": {
+      "type": "biginteger",
+      "required": true
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

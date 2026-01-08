@@ -11,10 +11,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "email": {
-      "type": "email",
-      "required": true
-    },
     "name": {
       "type": "string",
       "required": true
