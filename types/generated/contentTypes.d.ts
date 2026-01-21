@@ -523,7 +523,8 @@ export interface ApiRealEstateRealEstate extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    google_map_link: Schema.Attribute.Text & Schema.Attribute.Required;
     images: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
     license_number: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -558,7 +559,7 @@ export interface ApiRealEstateRealEstate extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    youtube_video: Schema.Attribute.Text;
+    youtube_video_link: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 

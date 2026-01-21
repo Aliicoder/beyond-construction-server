@@ -66,8 +66,9 @@
         "jeddah"
       ]
     },
-    "youtube_video": {
-      "type": "text"
+    "youtube_video_link": {
+      "type": "text",
+      "required": true
     },
     "license_number": {
       "type": "string",
@@ -79,7 +80,12 @@
       "required": true
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "required": true
+    },
+    "google_map_link": {
+      "type": "text",
+      "required": true
     }
   }
 }
